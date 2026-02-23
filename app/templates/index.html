@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IWMS Test Control</title>
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body>
+  <h1>IWMS Test Control</h1>
+
+  <section class="panel">
+    <h2>Run Case</h2>
+    <div class="row">
+      <label>Environment</label>
+      <select id="env"></select>
+    </div>
+    <div class="row">
+      <label>Case</label>
+      <select id="case"></select>
+    </div>
+    <div id="params"></div>
+    <button id="runBtn">Run</button>
+  </section>
+
+  <section class="panel">
+    <h2>Runs</h2>
+    <table id="runsTable">
+      <thead><tr><th>Time</th><th>Case</th><th>Env</th><th>Status</th><th>Action</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>Result Summary</h2>
+    <pre id="summary">Select a run...</pre>
+  </section>
+
+  <section class="panel">
+    <h2>Log</h2>
+    <pre id="log">Select a run...</pre>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

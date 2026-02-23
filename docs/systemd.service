@@ -1,0 +1,16 @@
+[Unit]
+Description=IWMS Test Control Flask Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/iwms-test-control
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=/opt/iwms-test-control/.venv/bin/python /opt/iwms-test-control/run.py
+Restart=always
+RestartSec=3
+User=iwms
+Group=iwms
+
+[Install]
+WantedBy=multi-user.target
