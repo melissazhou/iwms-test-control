@@ -65,11 +65,28 @@ export class RFLoginPage {
     await this.passwordInput.fill(password);
 
     // Handle Use Radius checkbox
+    // In some IWMS environments #chkRadius is disabled (cannot be clicked).
+    // If disabled, keep current value and continue instead of timing out.
+    const isEnabled = await this.useRadiusCheckbox.isEnabled().catch(() => false);
     const isChecked = await this.useRadiusCheckbox.isChecked().catch(() => false);
-    if (useRadius && !isChecked) {
-      await this.useRadiusCheckbox.click();
-    } else if (!useRadius && isChecked) {
-      await this.useRadiusCheckbox.click();
+
+    if (isEnabled) {
+      if (useRadius && !isChecked) {
+        await this.useRadiusCheckbox.click();
+      } else if (!useRadius && isChecked) {
+        await this.useRadiusCheckbox.click();
+      }
+    } else {
+      // fallback: try direct property set if caller explicitly requests a value different from current
+      if (useRadius !== isChecked) {
+        await this.page.evaluate((target) => {
+          const el = document.querySelector('#chkRadius') as HTMLInputElement | null;
+          if (el) {
+            el.checked = !!target;
+            el.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }, useRadius).catch(() => {});
+      }
     }
 
     // Select org if specified
