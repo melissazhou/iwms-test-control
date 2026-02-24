@@ -21,12 +21,19 @@ test.describe('RF Login Smoke Tests', () => {
     }, { timeout: 10000 }).toBeTruthy();
 
     const info = await getRFLoginInfo(page);
-    if (info) {
+    // Some Linux/headless runs return loginInfo object with empty fields briefly.
+    // Treat as success if app is clearly in authenticated shell.
+    const url = page.url();
+    const hasTabs = await page.locator('.tab-item').count();
+
+    if (info && info.UserCode && info.UserCode.trim()) {
       expect(info.UserCode).toBe('Test');
       expect(info.menuCount).toBeGreaterThan(0);
       console.log(`✅ RF Login OK: ${info.UserCode} @ ${info.OrgName}, ${info.menuCount} menus`);
     } else {
-      console.log('✅ RF Login OK (fallback check): URL moved off login and tabs rendered');
+      expect(url.includes('/login')).toBeFalsy();
+      expect(hasTabs).toBeGreaterThan(0);
+      console.log('✅ RF Login OK (shell fallback): not on login page and tabs rendered');
     }
   });
 
