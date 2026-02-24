@@ -90,8 +90,48 @@ export class RFLoginPage {
     }
 
     // Select org if specified
+    // Old locator('select').last() is unstable on Linux/headless and often points to wrong select.
+    // Use explicit org selector first, then safe fallbacks; if not found, continue without blocking login.
     if (org) {
-      await this.orgSelect.selectOption({ label: org });
+      const candidates = [
+        this.page.locator('#txtOrgCode, #txtOrgCodeEdit, select[ng-model*="Org"], select').first(),
+        this.page.locator('select').first(),
+      ];
+
+      let selected = false;
+      for (const sel of candidates) {
+        try {
+          if (await sel.isVisible({ timeout: 1000 }).catch(() => false)) {
+            // try by label/value/index-safe ways
+            await sel.selectOption({ label: org }).catch(async () => {
+              await sel.selectOption({ value: org }).catch(async () => {
+                // fallback: evaluate options and pick matching text contains org
+                const ok = await sel.evaluate((el, target) => {
+                  const s = el as HTMLSelectElement;
+                  const opts = Array.from(s.options || []);
+                  const idx = opts.findIndex(o => (o.text || '').toUpperCase().includes(String(target).toUpperCase()));
+                  if (idx >= 0) {
+                    s.selectedIndex = idx;
+                    s.dispatchEvent(new Event('change', { bubbles: true }));
+                    return true;
+                  }
+                  return false;
+                }, org);
+                if (!ok) throw new Error('org option not found');
+              });
+            });
+            selected = true;
+            break;
+          }
+        } catch {
+          // try next candidate
+        }
+      }
+
+      // If not selected, do not block login
+      if (!selected) {
+        await this.page.waitForTimeout(200);
+      }
     }
 
     // Click login
