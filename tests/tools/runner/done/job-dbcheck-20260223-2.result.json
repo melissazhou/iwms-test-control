@@ -1,0 +1,8 @@
+﻿{
+    "id":  "job-dbcheck-20260223-2",
+    "command":  "npm run db:check \u003e tools\\runner\\done\\dbcheck.out.txt 2\u003e\u00261",
+    "env":  "uat",
+    "exitCode":  1,
+    "log":  "D:\\Project\\IWMSTEST\\test-results\\runner-logs\\20260223-132905-job-dbcheck-20260223-2.log",
+    "finishedAt":  "2026-02-23T13:29:28"
+}

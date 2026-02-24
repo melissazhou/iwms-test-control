@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IWMS Test Control Center</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>IWMS Test Control Center · Phase 2</h1>
+    <div id="rootPath"></div>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>环境配置</h2>
+      <div class="row">
+        <label>当前环境</label>
+        <select id="envSelect"></select>
+        <button id="saveEnvBtn">切换</button>
+      </div>
+      <p class="hint">所有命令自动继承 TEST_ENV</p>
+    </section>
+
+    <section class="card">
+      <h2>一键任务</h2>
+      <div id="presetButtons" class="btn-grid"></div>
+      <div class="row mt">
+        <input id="customCmd" placeholder="自定义命令" />
+        <button id="runCustomBtn">运行</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>运行状态</h2>
+      <div id="runningState">-</div>
+      <button id="stopBtn" class="danger">停止当前任务</button>
+    </section>
+
+    <section class="card">
+      <h2>快速摘要</h2>
+      <div id="summaryBox" class="summary">暂无</div>
+      <button id="rerunFailedBtn">重跑上次失败用例</button>
+    </section>
+
+    <section class="card span-2">
+      <h2>历史记录</h2>
+      <table>
+        <thead>
+          <tr><th>时间</th><th>环境</th><th>任务</th><th>状态</th><th>失败分类</th><th>操作</th></tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+    </section>
+
+    <section class="card span-2">
+      <h2>失败用例</h2>
+      <div id="failedList" class="hint">请选择记录</div>
+    </section>
+
+    <section class="card span-2">
+      <h2>日志</h2>
+      <div id="logMeta" class="hint"></div>
+      <pre id="logBox">请选择记录...</pre>
+    </section>
+
+    <section class="card span-2">
+      <h2>Jenkins 触发（可选）</h2>
+      <div class="row mt"><input id="jenkinsUrl" placeholder="http://jenkins-host" /><input id="jenkinsJob" placeholder="job name" /></div>
+      <div class="row mt"><input id="jenkinsUser" placeholder="user" /><input id="jenkinsToken" placeholder="token" /></div>
+      <div class="row mt"><input id="jenkinsParams" placeholder='参数JSON, 如 {"branch":"uat"}' /><button id="jenkinsTriggerBtn">触发构建</button></div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿{
+    "id":  "job-inspect-20260223-1",
+    "command":  "node -e \"const fs=require(\u0027fs\u0027);const q=\u0027tools/runner/queue\u0027;const d=\u0027tools/runner/done\u0027;console.log(\u0027queue\u0027,fs.readdirSync(q));console.log(\u0027done\u0027,fs.readdirSync(d).slice(-20));\" \u003e tools\\runner\\done\\inspect.txt 2\u003e\u00261",
+    "env":  "uat",
+    "exitCode":  0,
+    "log":  "D:\\Project\\IWMSTEST\\test-results\\runner-logs\\20260223-143920-job-inspect-20260223-1.log",
+    "finishedAt":  "2026-02-23T14:39:22",
+    "stdoutTail":  "[START] 2026-02-23T14:39:20\r\n[ENV] TEST_ENV=uat\r\n[CMD] node -e \"const fs=require(\u0027fs\u0027);const q=\u0027tools/runner/queue\u0027;const d=\u0027tools/runner/done\u0027;console.log(\u0027queue\u0027,fs.readdirSync(q));console.log(\u0027done\u0027,fs.readdirSync(d).slice(-20));\" \u003e tools\\runner\\done\\inspect.txt 2\u003e\u00261\r\nqueue [ \u0027job-inspect-20260223-1.json\u0027, \u0027job-ssh-verify-20260223-1.json\u0027 ]\ndone [\n  \u0027job-list-20260223-1.json\u0027,\n  \u0027job-list-20260223-1.result.json\u0027,\n  \u0027job-listlogs-20260223-1.json\u0027,\n  \u0027job-listlogs-20260223-1.result.json\u0027,\n  \u0027job-ping-20260223-1.json\u0027,\n  \u0027job-ping-20260223-1.result.json\u0027,\n  \u0027job-smoke-20260223-1.json\u0027,\n  \u0027job-smoke-20260223-1.result.json\u0027,\n  \u0027job-smoke-20260223-2.json\u0027,\n  \u0027job-smoke-20260223-2.result.json\u0027,\n  \u0027job-smoke-20260223-3.json\u0027,\n  \u0027job-smoke-20260223-3.result.json\u0027,\n  \u0027job-smoke-20260223-4.json\u0027,\n  \u0027job-smoke-20260223-4.result.json\u0027,\n  \u0027job-smoke-20260223-5.json\u0027,\n  \u0027job-smoke-20260223-5.result.json\u0027,\n  \u0027job-smoke-20260223-6.json\u0027,\n  \u0027job-smoke-20260223-6.result.json\u0027,\n  \u0027listlogs.txt\u0027,\n  \u0027smoke.out.txt\u0027\n]\n\n[EXIT] 0\r\n",
+    "timedOut":  false
+}

@@ -1,0 +1,309 @@
+=== RF Smoke ===
+Started: 2026-02-23T23:26:19.738Z
+Env: uat
+Cmd: npx playwright test tests/smoke/rf-login.spec.ts --project=smoke
+
+
+Running 3 tests using 1 worker
+
+[RUNNING] 2026-02-23T23:26:29.772Z pid=28792
+[RUNNING] 2026-02-23T23:26:39.784Z pid=28792
+  x  1 [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) (21.4s)
+[RUNNING] 2026-02-23T23:26:49.792Z pid=28792
+[RUNNING] 2026-02-23T23:26:59.805Z pid=28792
+[RUNNING] 2026-02-23T23:27:09.809Z pid=28792
+  x  2 [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) (retry #1) (22.7s)
+[RUNNING] 2026-02-23T23:27:19.815Z pid=28792
+[RUNNING] 2026-02-23T23:27:29.826Z pid=28792
+  x  3 [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) (retry #2) (21.5s)
+[RUNNING] 2026-02-23T23:27:39.829Z pid=28792
+[RUNNING] 2026-02-23T23:27:49.842Z pid=28792
+[RUNNING] 2026-02-23T23:27:59.852Z pid=28792
+  x  4 [smoke] › tests\smoke\rf-login.spec.ts:27:7 › RF Login Smoke Tests › should access SO Pick page after login (21.4s)
+[RUNNING] 2026-02-23T23:28:09.867Z pid=28792
+[RUNNING] 2026-02-23T23:28:19.876Z pid=28792
+  x  5 [smoke] › tests\smoke\rf-login.spec.ts:27:7 › RF Login Smoke Tests › should access SO Pick page after login (retry #1) (22.8s)
+[RUNNING] 2026-02-23T23:28:29.889Z pid=28792
+[RUNNING] 2026-02-23T23:28:39.903Z pid=28792
+[RUNNING] 2026-02-23T23:28:49.906Z pid=28792
+  x  6 [smoke] › tests\smoke\rf-login.spec.ts:27:7 › RF Login Smoke Tests › should access SO Pick page after login (retry #2) (21.4s)
+[RUNNING] 2026-02-23T23:28:59.916Z pid=28792
+[RUNNING] 2026-02-23T23:29:09.920Z pid=28792
+  x  7 [smoke] › tests\smoke\rf-login.spec.ts:49:7 › RF Login Smoke Tests › should list available RF states (21.4s)
+[RUNNING] 2026-02-23T23:29:19.936Z pid=28792
+[RUNNING] 2026-02-23T23:29:29.952Z pid=28792
+[RUNNING] 2026-02-23T23:29:39.958Z pid=28792
+  x  8 [smoke] › tests\smoke\rf-login.spec.ts:49:7 › RF Login Smoke Tests › should list available RF states (retry #1) (22.8s)
+[RUNNING] 2026-02-23T23:29:49.964Z pid=28792
+[RUNNING] 2026-02-23T23:29:59.972Z pid=28792
+  x  9 [smoke] › tests\smoke\rf-login.spec.ts:49:7 › RF Login Smoke Tests › should list available RF states (retry #2) (21.4s)
+
+
+  1) [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) 
+
+    Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:13:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:13:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:13:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke-retry2\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [smoke] › tests\smoke\rf-login.spec.ts:27:7 › RF Login Smoke Tests › should access SO Pick page after login 
+
+    Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:29:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:29:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:29:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke-retry2\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [smoke] › tests\smoke\rf-login.spec.ts:49:7 › RF Login Smoke Tests › should list available RF states 
+
+    Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:51:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:51:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:51:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke-retry2\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) 
+    [smoke] › tests\smoke\rf-login.spec.ts:27:7 › RF Login Smoke Tests › should access SO Pick page after login 
+    [smoke] › tests\smoke\rf-login.spec.ts:49:7 › RF Login Smoke Tests › should list available RF states 
+
+Ended: 2026-02-23T23:30:04.547Z
+ExitCode: 1

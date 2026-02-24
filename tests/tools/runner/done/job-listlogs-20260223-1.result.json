@@ -1,0 +1,10 @@
+﻿{
+    "id":  "job-listlogs-20260223-1",
+    "command":  "node -e \"const fs=require(\u0027fs\u0027);const p=\u0027D:/Project/IWMSTEST/test-results/runner-logs\u0027;console.log(fs.existsSync(p)?fs.readdirSync(p).join(\u0027\\n\u0027):\u0027missing\u0027)\" \u003e tools\\runner\\done\\listlogs.txt 2\u003e\u00261",
+    "env":  "uat",
+    "exitCode":  0,
+    "log":  "D:\\Project\\IWMSTEST\\test-results\\runner-logs\\20260223-133448-job-listlogs-20260223-1.log",
+    "finishedAt":  "2026-02-23T13:34:48",
+    "stdoutTail":  "",
+    "stderrTail":  ""
+}

@@ -1,0 +1,10 @@
+﻿{
+    "id":  "job-ssh-verify-20260223-2",
+    "command":  "ssh -o StrictHostKeyChecking=no fei.fu.aland@10.190.101.249 \"echo CONNECTED \u0026\u0026 hostname \u0026\u0026 uname -a\"",
+    "env":  "uat",
+    "exitCode":  -1,
+    "log":  "D:\\Project\\IWMSTEST\\test-results\\runner-logs\\20260223-144201-job-ssh-verify-20260223-2.log",
+    "finishedAt":  "2026-02-23T14:57:02",
+    "stdoutTail":  "[START] 2026-02-23T14:42:01\r\n[ENV] TEST_ENV=uat\r\n[CMD] ssh -o StrictHostKeyChecking=no fei.fu.aland@10.190.101.249 \"echo CONNECTED \u0026\u0026 hostname \u0026\u0026 uname -a\"\r\n",
+    "timedOut":  true
+}

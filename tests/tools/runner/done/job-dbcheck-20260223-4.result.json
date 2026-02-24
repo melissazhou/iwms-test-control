@@ -1,0 +1,10 @@
+﻿{
+    "id":  "job-dbcheck-20260223-4",
+    "command":  "npm run db:check",
+    "env":  "uat",
+    "exitCode":  1,
+    "log":  "D:\\Project\\IWMSTEST\\test-results\\runner-logs\\20260223-133503-job-dbcheck-20260223-4.log",
+    "finishedAt":  "2026-02-23T13:35:26",
+    "stdoutTail":  "\n\u003e iwmstest@1.0.0 db:check\n\u003e npx ts-node src/utils/db-health-check.ts\n\n≡ƒöì IWMS UAT Database Health Check\n==================================\n\nDB: 10.190.101.119:1521/IWMSUAT.corp.ivcinc.com\n\n1. Testing RW connection (WMS)...\n",
+    "stderrTail":  "\nΓ¥î Health check failed: NJS-510: connection to host 10.190.101.119 port 1521 timed out. Request exceeded \"transportConnectTimeout\" of 20 seconds. (CONNECTION_ID=Rz+p09chu4nNMuyZ3t2hEA==)\n"
+}

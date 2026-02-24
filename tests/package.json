@@ -1,0 +1,35 @@
+{
+  "name": "iwmstest",
+  "version": "1.0.0",
+  "description": "IWMS WMS Automated E2E Testing Suite - Playwright + TypeScript",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:smoke": "npx playwright test --project=smoke",
+    "test:so": "npx playwright test --grep @so",
+    "test:po": "npx playwright test --grep @po",
+    "test:wo": "npx playwright test --grep @wo",
+    "test:inv": "npx playwright test --grep @inventory",
+    "test:web": "npx playwright test --grep @web",
+    "test:rf": "npx playwright test --grep @rf",
+    "test:and": "npx playwright test --grep @AND",
+    "test:ddr": "npx playwright test --grep @DDR",
+    "report": "npx playwright show-report",
+    "data:seed": "npx ts-node src/data/seed-test-data.ts",
+    "data:cleanup": "npx ts-node src/data/cleanup-test-data.ts",
+    "db:check": "npx ts-node src/utils/db-health-check.ts",
+    "env:check": "npx ts-node src/utils/env-health-check.ts",
+    "dashboard:start": "node tools/dashboard/server.js",
+    "dashboard:daemon:start": "tools\\scripts\\start-dashboard-daemon.bat",
+    "dashboard:daemon:stop": "tools\\scripts\\stop-dashboard-daemon.bat",
+    "dashboard:daemon:restart": "tools\\scripts\\restart-dashboard-daemon.bat",
+    "dashboard:startup:install": "tools\\scripts\\install-dashboard-startup-task.bat"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "typescript": "^5.7.0",
+    "ts-node": "^10.9.0",
+    "oracledb": "^6.7.0",
+    "dotenv": "^16.4.0",
+    "@types/node": "^22.0.0"
+  }
+}

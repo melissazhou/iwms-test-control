@@ -1,0 +1,1 @@
+{"id":"job-inspect-20260223-1","env":"uat","command":"node -e \"const fs=require('fs');const q='tools/runner/queue';const d='tools/runner/done';console.log('queue',fs.readdirSync(q));console.log('done',fs.readdirSync(d).slice(-20));\" > tools\\runner\\done\\inspect.txt 2>&1"}

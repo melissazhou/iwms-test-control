@@ -1,0 +1,10 @@
+﻿{
+    "id":  "job-ping-20260223-1",
+    "command":  "node -e \"console.log(\u0027runner-ok\u0027, process.version)\"",
+    "env":  "uat",
+    "exitCode":  0,
+    "log":  "D:\\Project\\IWMSTEST\\test-results\\runner-logs\\20260223-133001-job-ping-20260223-1.log",
+    "finishedAt":  "2026-02-23T13:30:01",
+    "stdoutTail":  "runner-ok v25.6.1\n",
+    "stderrTail":  ""
+}

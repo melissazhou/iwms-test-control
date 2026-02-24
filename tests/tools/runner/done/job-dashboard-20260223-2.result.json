@@ -1,0 +1,10 @@
+﻿{
+    "id":  "job-dashboard-20260223-2",
+    "command":  "npm run dashboard:daemon:start",
+    "env":  "uat",
+    "exitCode":  0,
+    "log":  "D:\\Project\\IWMSTEST\\test-results\\runner-logs\\20260223-142047-job-dashboard-20260223-2.log",
+    "finishedAt":  "2026-02-23T14:20:49",
+    "stdoutTail":  "\n\u003e iwmstest@1.0.0 dashboard:daemon:start\n\u003e tools\\scripts\\start-dashboard-daemon.bat\n\n",
+    "timedOut":  false
+}

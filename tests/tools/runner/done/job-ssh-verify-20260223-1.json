@@ -1,0 +1,1 @@
+{"id":"job-ssh-verify-20260223-1","env":"uat","command":"ssh -o StrictHostKeyChecking=no fei.fu.aland@10.190.101.249 \"echo CONNECTED && hostname && uname -a\""}

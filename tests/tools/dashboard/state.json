@@ -1,0 +1,306 @@
+{
+  "selectedEnv": "uat",
+  "running": null,
+  "history": [
+    {
+      "id": "2026-02-23T23-31-45-171Z",
+      "label": "RF Smoke",
+      "cmd": "npx playwright test tests/smoke/rf-login.spec.ts --project=smoke",
+      "env": "uat",
+      "startedAt": "2026-02-23T23:31:45.171Z",
+      "endedAt": "2026-02-23T23:32:55.894Z",
+      "exitCode": 1,
+      "status": "failed",
+      "failureTags": [
+        "auth",
+        "api"
+      ],
+      "summary": {
+        "total": null,
+        "passed": null,
+        "failed": null,
+        "skipped": null,
+        "durationMs": null,
+        "failedTests": []
+      },
+      "logFile": "D:\\Project\\IWMSTEST\\tools\\dashboard\\logs\\2026-02-23T23-31-45-171Z-RF_Smoke.log"
+    },
+    {
+      "id": "2026-02-23T23-26-19-738Z",
+      "label": "RF Smoke",
+      "cmd": "npx playwright test tests/smoke/rf-login.spec.ts --project=smoke",
+      "env": "uat",
+      "startedAt": "2026-02-23T23:26:19.738Z",
+      "endedAt": "2026-02-23T23:30:04.547Z",
+      "exitCode": 1,
+      "status": "failed",
+      "failureTags": [
+        "auth",
+        "api"
+      ],
+      "summary": {
+        "total": 0,
+        "passed": null,
+        "failed": 3,
+        "skipped": 0,
+        "durationMs": 222434.627,
+        "failedTests": [
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should login with Test user (no Radius)",
+            "fullTitle": "should login with Test user (no Radius)",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          },
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should access SO Pick page after login",
+            "fullTitle": "should access SO Pick page after login",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          },
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should list available RF states",
+            "fullTitle": "should list available RF states",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          }
+        ]
+      },
+      "logFile": "D:\\Project\\IWMSTEST\\tools\\dashboard\\logs\\2026-02-23T23-26-19-738Z-RF_Smoke.log"
+    },
+    {
+      "id": "2026-02-23T23-24-08-690Z",
+      "label": "RF Smoke",
+      "cmd": "npx playwright test tests/smoke/rf-login.spec.ts --project=smoke",
+      "env": "uat",
+      "startedAt": "2026-02-23T23:24:08.690Z",
+      "endedAt": "2026-02-23T23:25:52.195Z",
+      "exitCode": -999,
+      "status": "failed",
+      "failureTags": [
+        "interrupted",
+        "restarted"
+      ],
+      "summary": null,
+      "logFile": "D:\\Project\\IWMSTEST\\test-results\\dashboard-logs\\2026-02-23T23-24-08-690Z-RF_Smoke.log"
+    },
+    {
+      "id": "2026-02-23T23-23-07-029Z",
+      "label": "RF Smoke",
+      "cmd": "npx playwright test tests/smoke/rf-login.spec.ts --project=smoke",
+      "env": "uat",
+      "startedAt": "2026-02-23T23:23:07.030Z",
+      "endedAt": "2026-02-23T23:23:48.929Z",
+      "exitCode": -999,
+      "status": "failed",
+      "failureTags": [
+        "interrupted",
+        "restarted"
+      ],
+      "summary": null,
+      "logFile": "D:\\Project\\IWMSTEST\\test-results\\dashboard-logs\\2026-02-23T23-23-07-029Z-RF_Smoke.log"
+    },
+    {
+      "id": "2026-02-23T23-17-37-649Z",
+      "label": "RF Smoke",
+      "cmd": "npx playwright test tests/smoke/rf-login.spec.ts --project=smoke",
+      "env": "uat",
+      "startedAt": "2026-02-23T23:17:37.649Z",
+      "endedAt": "2026-02-23T23:21:22.879Z",
+      "exitCode": 1,
+      "status": "failed",
+      "failureTags": [],
+      "summary": {
+        "total": 0,
+        "passed": null,
+        "failed": 3,
+        "skipped": 0,
+        "durationMs": 222833.727,
+        "failedTests": [
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should login with Test user (no Radius)",
+            "fullTitle": "should login with Test user (no Radius)",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          },
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should access SO Pick page after login",
+            "fullTitle": "should access SO Pick page after login",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          },
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should list available RF states",
+            "fullTitle": "should list available RF states",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          }
+        ]
+      },
+      "logFile": "D:\\Project\\IWMSTEST\\test-results\\dashboard-logs\\2026-02-23T23-17-37-649Z-RF_Smoke.log"
+    },
+    {
+      "id": "2026-02-23T23-12-03-825Z",
+      "label": "RF Smoke",
+      "cmd": "npx playwright test tests/smoke/rf-login.spec.ts --project=smoke",
+      "env": "uat",
+      "startedAt": "2026-02-23T23:12:03.825Z",
+      "endedAt": "2026-02-23T23:15:48.293Z",
+      "exitCode": 1,
+      "status": "failed",
+      "failureTags": [],
+      "summary": {
+        "total": 0,
+        "passed": null,
+        "failed": 3,
+        "skipped": 0,
+        "durationMs": 222042.82499999998,
+        "failedTests": [
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should login with Test user (no Radius)",
+            "fullTitle": "should login with Test user (no Radius)",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          },
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should access SO Pick page after login",
+            "fullTitle": "should access SO Pick page after login",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          },
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should list available RF states",
+            "fullTitle": "should list available RF states",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          }
+        ]
+      },
+      "logFile": "D:\\Project\\IWMSTEST\\test-results\\dashboard-logs\\2026-02-23T23-12-03-825Z-RF_Smoke.log"
+    },
+    {
+      "id": "2026-02-23T23-09-26-426Z",
+      "label": "重跑失败-RF Smoke",
+      "cmd": "npx playwright test \"smoke/rf-login.spec.ts\" --project=smoke",
+      "env": "uat",
+      "startedAt": "2026-02-23T23:09:26.426Z",
+      "endedAt": "2026-02-23T23:09:41.528Z",
+      "exitCode": -999,
+      "status": "failed",
+      "failureTags": [
+        "interrupted",
+        "restarted"
+      ],
+      "summary": null,
+      "logFile": "D:\\Project\\IWMSTEST\\test-results\\dashboard-logs\\2026-02-23T23-09-26-426Z-____-RF_Smoke.log"
+    },
+    {
+      "id": "2026-02-23T23-08-19-108Z",
+      "label": "RF Smoke",
+      "cmd": "npx playwright test tests/smoke/rf-login.spec.ts --project=smoke",
+      "env": "uat",
+      "startedAt": "2026-02-23T23:08:19.108Z",
+      "endedAt": "2026-02-23T23:08:46.552Z",
+      "exitCode": 1,
+      "status": "failed",
+      "failureTags": [],
+      "summary": {
+        "total": 0,
+        "passed": null,
+        "failed": 3,
+        "skipped": 0,
+        "durationMs": 24278.855,
+        "failedTests": [
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should login with Test user (no Radius)",
+            "fullTitle": "should login with Test user (no Radius)",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          },
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should access SO Pick page after login",
+            "fullTitle": "should access SO Pick page after login",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          },
+          {
+            "file": "smoke/rf-login.spec.ts",
+            "title": "should list available RF states",
+            "fullTitle": "should list available RF states",
+            "project": "smoke",
+            "status": "failed",
+            "retry": 0
+          }
+        ]
+      },
+      "logFile": "D:\\Project\\IWMSTEST\\test-results\\dashboard-logs\\2026-02-23T23-08-19-108Z-RF_Smoke.log"
+    },
+    {
+      "id": "2026-02-23T22-20-01-251Z",
+      "label": "Smoke测试",
+      "cmd": "npm run test:smoke",
+      "env": "uat",
+      "startedAt": "2026-02-23T22:20:01.251Z",
+      "endedAt": "2026-02-23T23:05:12.655Z",
+      "exitCode": -999,
+      "status": "failed",
+      "failureTags": [
+        "interrupted",
+        "restarted"
+      ],
+      "summary": null,
+      "logFile": "D:\\Project\\IWMSTEST\\test-results\\dashboard-logs\\2026-02-23T22-20-01-251Z-Smoke__.log"
+    },
+    {
+      "id": "2026-02-23T22-19-10-495Z",
+      "label": "DB检查",
+      "cmd": "npm run db:check",
+      "env": "uat",
+      "startedAt": "2026-02-23T22:19:10.495Z",
+      "endedAt": "2026-02-23T22:19:17.381Z",
+      "exitCode": 0,
+      "status": "passed",
+      "failureTags": [],
+      "summary": null,
+      "logFile": "D:\\Project\\IWMSTEST\\test-results\\dashboard-logs\\2026-02-23T22-19-10-495Z-DB__.log"
+    },
+    {
+      "id": "2026-02-23T22-18-40-252Z",
+      "label": "环境检查",
+      "cmd": "npm run env:check",
+      "env": "uat",
+      "startedAt": "2026-02-23T22:18:40.252Z",
+      "endedAt": "2026-02-23T22:19:02.742Z",
+      "exitCode": 0,
+      "status": "passed",
+      "failureTags": [],
+      "summary": null,
+      "logFile": "D:\\Project\\IWMSTEST\\test-results\\dashboard-logs\\2026-02-23T22-18-40-252Z-____.log"
+    }
+  ],
+  "maxHistory": 80,
+  "meta": {
+    "lastReconciledAt": "2026-02-23T23:25:52.193Z"
+  }
+}

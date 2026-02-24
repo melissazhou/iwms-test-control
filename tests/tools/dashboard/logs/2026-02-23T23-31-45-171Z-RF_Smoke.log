@@ -1,0 +1,20 @@
+=== RF Smoke ===
+Started: 2026-02-23T23:31:45.171Z
+Env: uat
+Cmd: npx playwright test tests/smoke/rf-login.spec.ts --project=smoke
+
+
+Running 3 tests using 1 worker
+
+[RUNNING] 2026-02-23T23:31:55.219Z pid=9540
+[RUNNING] 2026-02-23T23:32:05.232Z pid=9540
+  x  1 [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) (21.6s)
+[RUNNING] 2026-02-23T23:32:15.238Z pid=9540
+[RUNNING] 2026-02-23T23:32:25.247Z pid=9540
+[RUNNING] 2026-02-23T23:32:35.251Z pid=9540
+  x  2 [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) (retry #1) (22.5s)
+[RUNNING] 2026-02-23T23:32:45.266Z pid=9540
+[RUNNING] 2026-02-23T23:32:55.275Z pid=9540
+
+Ended: 2026-02-23T23:32:55.894Z
+ExitCode: 1

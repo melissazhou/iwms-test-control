@@ -1,0 +1,1 @@
+{"id":"job-smoke-20260223-2","env":"uat","command":"npm run test:smoke > tools\\runner\\done\\smoke.out.txt 2>&1"}

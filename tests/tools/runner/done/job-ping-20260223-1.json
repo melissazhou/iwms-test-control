@@ -1,0 +1,1 @@
+{"id":"job-ping-20260223-1","env":"uat","command":"node -e \"console.log('runner-ok', process.version)\""}

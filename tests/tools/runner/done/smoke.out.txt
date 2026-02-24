@@ -1,0 +1,529 @@
+
+> iwmstest@1.0.0 test:smoke
+> npx playwright test --project=smoke
+
+
+Running 6 tests using 1 worker
+
+🔗 Login URL: https://iwmsuat.corp.ivcinc.com:8012/smis-api/WServiceInterface/LoginUser
+  x  1 [smoke] › tests\smoke\api-login.spec.ts:10:7 › API Login Smoke Tests › should login via API and get JWT token (38ms)
+🔗 Login URL: https://iwmsuat.corp.ivcinc.com:8012/smis-api/WServiceInterface/LoginUser
+  x  2 [smoke] › tests\smoke\api-login.spec.ts:10:7 › API Login Smoke Tests › should login via API and get JWT token (retry #1) (54ms)
+🔗 Login URL: https://iwmsuat.corp.ivcinc.com:8012/smis-api/WServiceInterface/LoginUser
+  x  3 [smoke] › tests\smoke\api-login.spec.ts:10:7 › API Login Smoke Tests › should login via API and get JWT token (retry #2) (21ms)
+  x  4 [smoke] › tests\smoke\api-login.spec.ts:40:7 › API Login Smoke Tests › should reject invalid credentials (23ms)
+  x  5 [smoke] › tests\smoke\api-login.spec.ts:40:7 › API Login Smoke Tests › should reject invalid credentials (retry #1) (53ms)
+  x  6 [smoke] › tests\smoke\api-login.spec.ts:40:7 › API Login Smoke Tests › should reject invalid credentials (retry #2) (51ms)
+  x  7 [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) (413ms)
+  x  8 [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) (retry #1) (545ms)
+  x  9 [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) (retry #2) (390ms)
+  x  10 [smoke] › tests\smoke\rf-login.spec.ts:27:7 › RF Login Smoke Tests › should access SO Pick page after login (387ms)
+  x  11 [smoke] › tests\smoke\rf-login.spec.ts:27:7 › RF Login Smoke Tests › should access SO Pick page after login (retry #1) (557ms)
+  x  12 [smoke] › tests\smoke\rf-login.spec.ts:27:7 › RF Login Smoke Tests › should access SO Pick page after login (retry #2) (384ms)
+  x  13 [smoke] › tests\smoke\rf-login.spec.ts:49:7 › RF Login Smoke Tests › should list available RF states (395ms)
+  x  14 [smoke] › tests\smoke\rf-login.spec.ts:49:7 › RF Login Smoke Tests › should list available RF states (retry #1) (497ms)
+  x  15 [smoke] › tests\smoke\rf-login.spec.ts:49:7 › RF Login Smoke Tests › should list available RF states (retry #2) (453ms)
+  x  16 [smoke] › tests\smoke\web-login.spec.ts:10:7 › Web Login Smoke Tests › should login to Web with Test user (391ms)
+  x  17 [smoke] › tests\smoke\web-login.spec.ts:10:7 › Web Login Smoke Tests › should login to Web with Test user (retry #1) (493ms)
+  x  18 [smoke] › tests\smoke\web-login.spec.ts:10:7 › Web Login Smoke Tests › should login to Web with Test user (retry #2) (415ms)
+
+
+  1) [smoke] › tests\smoke\api-login.spec.ts:10:7 › API Login Smoke Tests › should login via API and get JWT token 
+
+    Error: apiRequestContext.post: getaddrinfo ENOTFOUND iwmsuat.corp.ivcinc.com
+    Call log:
+    [2m  - → POST https://iwmsuat.corp.ivcinc.com:8012/smis-api/WServiceInterface/LoginUser[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.7632.6 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - content-length: 96[22m
+
+
+      12 |     console.log(`🔗 Login URL: ${loginUrl}`);
+      13 |
+    > 14 |     const response = await request.post(loginUrl, {
+         |                                    ^
+      15 |       data: {
+      16 |         ActionName: 'LoginUser',
+      17 |         UserCode: ENV.TEST_USER,
+        at D:\Project\IWMSTEST\tests\smoke\api-login.spec.ts:14:36
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: apiRequestContext.post: getaddrinfo ENOTFOUND iwmsuat.corp.ivcinc.com
+    Call log:
+    [2m  - → POST https://iwmsuat.corp.ivcinc.com:8012/smis-api/WServiceInterface/LoginUser[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.7632.6 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - content-length: 96[22m
+
+
+      12 |     console.log(`🔗 Login URL: ${loginUrl}`);
+      13 |
+    > 14 |     const response = await request.post(loginUrl, {
+         |                                    ^
+      15 |       data: {
+      16 |         ActionName: 'LoginUser',
+      17 |         UserCode: ENV.TEST_USER,
+        at D:\Project\IWMSTEST\tests\smoke\api-login.spec.ts:14:36
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\smoke-api-login-API-Login--45c2b-n-via-API-and-get-JWT-token-smoke-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\smoke-api-login-API-Login--45c2b-n-via-API-and-get-JWT-token-smoke-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: apiRequestContext.post: getaddrinfo ENOTFOUND iwmsuat.corp.ivcinc.com
+    Call log:
+    [2m  - → POST https://iwmsuat.corp.ivcinc.com:8012/smis-api/WServiceInterface/LoginUser[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.7632.6 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - content-length: 96[22m
+
+
+      12 |     console.log(`🔗 Login URL: ${loginUrl}`);
+      13 |
+    > 14 |     const response = await request.post(loginUrl, {
+         |                                    ^
+      15 |       data: {
+      16 |         ActionName: 'LoginUser',
+      17 |         UserCode: ENV.TEST_USER,
+        at D:\Project\IWMSTEST\tests\smoke\api-login.spec.ts:14:36
+
+  2) [smoke] › tests\smoke\api-login.spec.ts:40:7 › API Login Smoke Tests › should reject invalid credentials 
+
+    Error: apiRequestContext.post: getaddrinfo ENOTFOUND iwmsuat.corp.ivcinc.com
+    Call log:
+    [2m  - → POST https://iwmsuat.corp.ivcinc.com:8012/smis-api/WServiceInterface/LoginUser[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.7632.6 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - content-length: 108[22m
+
+
+      40 |   test('should reject invalid credentials', async ({ request }) => {
+      41 |     const loginUrl = `${ENV.API_BASE_URL}${ENV.API.LOGIN}`;
+    > 42 |     const response = await request.post(loginUrl, {
+         |                                    ^
+      43 |       data: {
+      44 |         ActionName: 'LoginUser',
+      45 |         UserCode: 'InvalidUser',
+        at D:\Project\IWMSTEST\tests\smoke\api-login.spec.ts:42:36
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: apiRequestContext.post: getaddrinfo ENOTFOUND iwmsuat.corp.ivcinc.com
+    Call log:
+    [2m  - → POST https://iwmsuat.corp.ivcinc.com:8012/smis-api/WServiceInterface/LoginUser[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.7632.6 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - content-length: 108[22m
+
+
+      40 |   test('should reject invalid credentials', async ({ request }) => {
+      41 |     const loginUrl = `${ENV.API_BASE_URL}${ENV.API.LOGIN}`;
+    > 42 |     const response = await request.post(loginUrl, {
+         |                                    ^
+      43 |       data: {
+      44 |         ActionName: 'LoginUser',
+      45 |         UserCode: 'InvalidUser',
+        at D:\Project\IWMSTEST\tests\smoke\api-login.spec.ts:42:36
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\smoke-api-login-API-Login--4d00c--reject-invalid-credentials-smoke-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\smoke-api-login-API-Login--4d00c--reject-invalid-credentials-smoke-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: apiRequestContext.post: getaddrinfo ENOTFOUND iwmsuat.corp.ivcinc.com
+    Call log:
+    [2m  - → POST https://iwmsuat.corp.ivcinc.com:8012/smis-api/WServiceInterface/LoginUser[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.7632.6 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - content-length: 108[22m
+
+
+      40 |   test('should reject invalid credentials', async ({ request }) => {
+      41 |     const loginUrl = `${ENV.API_BASE_URL}${ENV.API.LOGIN}`;
+    > 42 |     const response = await request.post(loginUrl, {
+         |                                    ^
+      43 |       data: {
+      44 |         ActionName: 'LoginUser',
+      45 |         UserCode: 'InvalidUser',
+        at D:\Project\IWMSTEST\tests\smoke\api-login.spec.ts:42:36
+
+  3) [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) 
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:13:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:13:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:13:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-14cb8-n-with-Test-user-no-Radius--smoke-retry2\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [smoke] › tests\smoke\rf-login.spec.ts:27:7 › RF Login Smoke Tests › should access SO Pick page after login 
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:29:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:29:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:29:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-7760b-ss-SO-Pick-page-after-login-smoke-retry2\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [smoke] › tests\smoke\rf-login.spec.ts:49:7 › RF Login Smoke Tests › should list available RF states 
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:51:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:51:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/MobileApp/index.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\rf\RFLoginPage.ts:47
+
+      45 |
+      46 |   async goto(): Promise<void> {
+    > 47 |     await this.page.goto(ENV.RF_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      48 |     await this.page.waitForTimeout(2000); // Wait for Angular bootstrap
+      49 |   }
+      50 |
+        at RFLoginPage.goto (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:47:21)
+        at RFLoginPage.login (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:57:16)
+        at RFLoginPage.loginAsTest (D:\Project\IWMSTEST\src\pages\rf\RFLoginPage.ts:89:16)
+        at D:\Project\IWMSTEST\tests\smoke\rf-login.spec.ts:51:19
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-rf-login-RF-Login-Sm-9c036-ld-list-available-RF-states-smoke-retry2\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [smoke] › tests\smoke\web-login.spec.ts:10:7 › Web Login Smoke Tests › should login to Web with Test user 
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/FLogin.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/FLogin.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\web\WebLoginPage.ts:29
+
+      27 |
+      28 |   async goto(): Promise<void> {
+    > 29 |     await this.page.goto(ENV.WEB_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      30 |     await this.page.waitForLoadState('networkidle').catch(() => {});
+      31 |   }
+      32 |
+        at WebLoginPage.goto (D:\Project\IWMSTEST\src\pages\web\WebLoginPage.ts:29:21)
+        at WebLoginPage.login (D:\Project\IWMSTEST\src\pages\web\WebLoginPage.ts:38:16)
+        at D:\Project\IWMSTEST\tests\smoke\web-login.spec.ts:12:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-web-login-Web-Login--ea208-login-to-Web-with-Test-user-smoke\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/FLogin.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/FLogin.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\web\WebLoginPage.ts:29
+
+      27 |
+      28 |   async goto(): Promise<void> {
+    > 29 |     await this.page.goto(ENV.WEB_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      30 |     await this.page.waitForLoadState('networkidle').catch(() => {});
+      31 |   }
+      32 |
+        at WebLoginPage.goto (D:\Project\IWMSTEST\src\pages\web\WebLoginPage.ts:29:21)
+        at WebLoginPage.login (D:\Project\IWMSTEST\src\pages\web\WebLoginPage.ts:38:16)
+        at D:\Project\IWMSTEST\tests\smoke\web-login.spec.ts:12:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-web-login-Web-Login--ea208-login-to-Web-with-Test-user-smoke-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\smoke-web-login-Web-Login--ea208-login-to-Web-with-Test-user-smoke-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\smoke-web-login-Web-Login--ea208-login-to-Web-with-Test-user-smoke-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\smoke-web-login-Web-Login--ea208-login-to-Web-with-Test-user-smoke-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://iwmsuat.corp.ivcinc.com:8010/FLogin.html
+    Call log:
+    [2m  - navigating to "https://iwmsuat.corp.ivcinc.com:8010/FLogin.html", waiting until "domcontentloaded"[22m
+
+
+       at ..\src\pages\web\WebLoginPage.ts:29
+
+      27 |
+      28 |   async goto(): Promise<void> {
+    > 29 |     await this.page.goto(ENV.WEB_LOGIN_URL, { waitUntil: 'domcontentloaded' });
+         |                     ^
+      30 |     await this.page.waitForLoadState('networkidle').catch(() => {});
+      31 |   }
+      32 |
+        at WebLoginPage.goto (D:\Project\IWMSTEST\src\pages\web\WebLoginPage.ts:29:21)
+        at WebLoginPage.login (D:\Project\IWMSTEST\src\pages\web\WebLoginPage.ts:38:16)
+        at D:\Project\IWMSTEST\tests\smoke\web-login.spec.ts:12:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\smoke-web-login-Web-Login--ea208-login-to-Web-with-Test-user-smoke-retry2\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6 failed
+    [smoke] › tests\smoke\api-login.spec.ts:10:7 › API Login Smoke Tests › should login via API and get JWT token 
+    [smoke] › tests\smoke\api-login.spec.ts:40:7 › API Login Smoke Tests › should reject invalid credentials 
+    [smoke] › tests\smoke\rf-login.spec.ts:11:7 › RF Login Smoke Tests › should login with Test user (no Radius) 
+    [smoke] › tests\smoke\rf-login.spec.ts:27:7 › RF Login Smoke Tests › should access SO Pick page after login 
+    [smoke] › tests\smoke\rf-login.spec.ts:49:7 › RF Login Smoke Tests › should list available RF states 
+    [smoke] › tests\smoke\web-login.spec.ts:10:7 › Web Login Smoke Tests › should login to Web with Test user 
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

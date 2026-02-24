@@ -1,0 +1,8 @@
+﻿{
+    "id":  "job-smoke-20260223-1",
+    "command":  "npm run test:smoke",
+    "env":  "uat",
+    "exitCode":  1,
+    "log":  "D:\\Project\\IWMSTEST\\test-results\\runner-logs\\20260223-132434-job-smoke-20260223-1.log",
+    "finishedAt":  "2026-02-23T13:25:09"
+}

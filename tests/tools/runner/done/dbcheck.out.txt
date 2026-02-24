@@ -1,0 +1,12 @@
+
+> iwmstest@1.0.0 db:check
+> npx ts-node src/utils/db-health-check.ts
+
+🔍 IWMS UAT Database Health Check
+==================================
+
+DB: 10.190.101.119:1521/IWMSUAT.corp.ivcinc.com
+
+1. Testing RW connection (WMS)...
+
+❌ Health check failed: NJS-510: connection to host 10.190.101.119 port 1521 timed out. Request exceeded "transportConnectTimeout" of 20 seconds. (CONNECTION_ID=lW/GGasjtQ1dY+/QlK1mjA==)

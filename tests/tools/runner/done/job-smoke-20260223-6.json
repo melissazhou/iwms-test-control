@@ -1,0 +1,1 @@
+{"id":"job-smoke-20260223-6","env":"uat","command":"npm run test:smoke"}

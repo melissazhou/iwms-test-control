@@ -1,0 +1,1 @@
+{"id":"job-dashboard-start-now","env":"uat","command":"npm run dashboard:daemon:start"}

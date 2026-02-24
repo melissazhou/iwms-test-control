@@ -1,0 +1,1 @@
+{"id":"job-listlogs-20260223-1","env":"uat","command":"node -e \"const fs=require('fs');const p='D:/Project/IWMSTEST/test-results/runner-logs';console.log(fs.existsSync(p)?fs.readdirSync(p).join('\\n'):'missing')\" > tools\\runner\\done\\listlogs.txt 2>&1"}

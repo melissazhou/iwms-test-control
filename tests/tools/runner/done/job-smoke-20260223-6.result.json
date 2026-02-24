@@ -1,0 +1,10 @@
+﻿{
+    "id":  "job-smoke-20260223-6",
+    "command":  "npm run test:smoke",
+    "env":  "uat",
+    "exitCode":  -1,
+    "log":  "D:\\Project\\IWMSTEST\\test-results\\runner-logs\\20260223-140547-job-smoke-20260223-6.log",
+    "finishedAt":  "2026-02-23T14:20:47",
+    "stdoutTail":  "\n\u003e iwmstest@1.0.0 test:smoke\n\u003e npx playwright test --project=smoke\n\n\nRunning 6 tests using 1 worker\n\nðŸ”— Login URL: https://iwmsuat.corp.ivcinc.com:8012/smis-api/WServiceInterface/LoginUser\nðŸ“‹ Login response keys: MessageType, ErrorCode, ErrorMessage, EntityObject, EffectRowCount, EntityList, ExtendData, DataSet, DataTable, EntityDataTable, IsSuccess, ExistResultData\nðŸ”‘ Auth token present: false\nâš ï¸ No token in response, full body: {\"MessageType\":\"\",\"ErrorCode\":\"\",\"ErrorMessage\":\"\",\"EntityObject\":{\"__Request_Id\":\"\",\"__BaseEntityExtendPropertyName\":\"\",\"__DataProviderKey\":\"\",\"__InsertWithSeq\":false,\"__BaseEntityExtendPropertyValue\":\"\",\"QueryPagerParameter\":\"\",\"queryPagerParameter\":\"\",\"GroupID\":0,\"OrganizationID\":84,\"UserCode\":\"T\n  ok 1 [smoke] â€º tests\\smoke\\api-login.spec.ts:10:7 â€º API Login Smoke Tests â€º should login via API and get JWT token (10.2s)\nðŸ“‹ Invalid login response: {\"MessageType\":\"\",\"ErrorCode\":\"$Error_User_Not_Exist\",\"ErrorMessage\":\"User code error\",\"EntityObject\":\"\",\"EffectRowCount\":0,\"EntityList\":\"\",\"ExtendData\":\"\",\"DataSet\":\"\",\"DataTable\":\"\",\"EntityDataTable\n  ok 2 [smoke] â€º tests\\smoke\\api-login.spec.ts:40:7 â€º API Login Smoke Tests â€º should reject invalid credentials (273ms)\n  x  3 [smoke] â€º tests\\smoke\\rf-login.spec.ts:11:7 â€º RF Login Smoke Tests â€º should login with Test user (no Radius) (40.0s)\n  x  4 [smoke] â€º tests\\smoke\\rf-login.spec.ts:11:7 â€º RF Login Smoke Tests â€º should login with Test user (no Radius) (retry #1) (34.2s)\n",
+    "timedOut":  true
+}

@@ -1,0 +1,1 @@
+{"id":"job-list-20260223-1","env":"uat","command":"node -e \"const fs=require('fs');console.log('runner-logs',fs.existsSync('test-results/runner-logs'),fs.readdirSync('test-results/runner-logs'));console.log('done',fs.readdirSync('tools/runner/done'));\""}
