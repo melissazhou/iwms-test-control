@@ -93,44 +93,35 @@ export class RFLoginPage {
     // Old locator('select').last() is unstable on Linux/headless and often points to wrong select.
     // Use explicit org selector first, then safe fallbacks; if not found, continue without blocking login.
     if (org) {
-      const candidates = [
-        this.page.locator('#txtOrgCode, #txtOrgCodeEdit, select[ng-model*="Org"], select').first(),
-        this.page.locator('select').first(),
-      ];
+      // Best-effort org selection: never block login flow.
+      // Some environments have many unrelated <select> controls and selectOption can hang.
+      try {
+        const candidates = this.page.locator('select');
+        const count = await candidates.count().catch(() => 0);
 
-      let selected = false;
-      for (const sel of candidates) {
-        try {
-          if (await sel.isVisible({ timeout: 1000 }).catch(() => false)) {
-            // try by label/value/index-safe ways
-            await sel.selectOption({ label: org }).catch(async () => {
-              await sel.selectOption({ value: org }).catch(async () => {
-                // fallback: evaluate options and pick matching text contains org
-                const ok = await sel.evaluate((el, target) => {
-                  const s = el as HTMLSelectElement;
-                  const opts = Array.from(s.options || []);
-                  const idx = opts.findIndex(o => (o.text || '').toUpperCase().includes(String(target).toUpperCase()));
-                  if (idx >= 0) {
-                    s.selectedIndex = idx;
-                    s.dispatchEvent(new Event('change', { bubbles: true }));
-                    return true;
-                  }
-                  return false;
-                }, org);
-                if (!ok) throw new Error('org option not found');
-              });
+        for (let i = 0; i < Math.min(count, 4); i++) {
+          const sel = candidates.nth(i);
+          const ok = await sel.evaluate((el, target) => {
+            const s = el as HTMLSelectElement;
+            const opts = Array.from(s.options || []);
+            const idx = opts.findIndex(o => {
+              const t = (o.text || '').toUpperCase();
+              const v = (o.value || '').toUpperCase();
+              const tg = String(target).toUpperCase();
+              return t === tg || v === tg || t.includes(tg);
             });
-            selected = true;
-            break;
-          }
-        } catch {
-          // try next candidate
-        }
-      }
+            if (idx >= 0) {
+              s.selectedIndex = idx;
+              s.dispatchEvent(new Event('change', { bubbles: true }));
+              return true;
+            }
+            return false;
+          }, org).catch(() => false);
 
-      // If not selected, do not block login
-      if (!selected) {
-        await this.page.waitForTimeout(200);
+          if (ok) break;
+        }
+      } catch {
+        // ignore org selection issues; proceed login
       }
     }
 

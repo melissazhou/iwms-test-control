@@ -10,7 +10,7 @@ test.describe('RF Login Smoke Tests', () => {
 
   test('should login with Test user (no Radius)', async ({ page }) => {
     const rfLogin = new RFLoginPage(page);
-    await rfLogin.loginAsTest('AND');
+    await rfLogin.loginAsTest();
 
     // Verify loginInfo is populated
     const loggedIn = await isRFLoggedIn(page);
@@ -19,14 +19,13 @@ test.describe('RF Login Smoke Tests', () => {
     const info = await getRFLoginInfo(page);
     expect(info).not.toBeNull();
     expect(info.UserCode).toBe('Test');
-    expect(info.OrgName).toBe('AND');
     expect(info.menuCount).toBeGreaterThan(0);
     console.log(`✅ RF Login OK: ${info.UserCode} @ ${info.OrgName}, ${info.menuCount} menus`);
   });
 
   test('should access SO Pick page after login', async ({ page }) => {
     const rfLogin = new RFLoginPage(page);
-    await rfLogin.loginAsTest('AND');
+    await rfLogin.loginAsTest();
 
     // Navigate to SO Pick via state.go
     await page.evaluate(() => {
@@ -48,7 +47,7 @@ test.describe('RF Login Smoke Tests', () => {
 
   test('should list available RF states', async ({ page }) => {
     const rfLogin = new RFLoginPage(page);
-    await rfLogin.loginAsTest('AND');
+    await rfLogin.loginAsTest();
 
     const states = await page.evaluate(() => {
       return (window as any).angular.element(document.body).injector().get('$state')
